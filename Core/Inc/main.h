@@ -57,6 +57,14 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define L6470_RST_Pin GPIO_PIN_2
+#define L6470_RST_GPIO_Port GPIOD
+#define L6470_STCK_Pin GPIO_PIN_3
+#define L6470_STCK_GPIO_Port GPIOD
+#define L6470_FLAG_Pin GPIO_PIN_4
+#define L6470_FLAG_GPIO_Port GPIOD
+#define L6470_BUSY_SYNC_Pin GPIO_PIN_5
+#define L6470_BUSY_SYNC_GPIO_Port GPIOD
 
 /* USER CODE BEGIN Private defines */
 
