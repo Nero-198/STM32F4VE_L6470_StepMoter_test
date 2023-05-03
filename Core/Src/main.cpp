@@ -88,13 +88,26 @@ int main(void)
   MX_GPIO_Init();
   MX_SPI3_Init();
   /* USER CODE BEGIN 2 */
-
+  uint8_t dataToSend = 0b01100000;  // データを定義
+  uint8_t data1= 0x01;
+  uint8_t data2= 0x3f;
+  uint8_t data3= 0xff;
+  uint8_t data4= 0x38;
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  HAL_SPI_Transmit(&hspi3, &data1, 1, 1000);
+	  HAL_SPI_Transmit(&hspi3, &data2, 1, 1000);
+	  HAL_SPI_Transmit(&hspi3, &data3, 1, 1000);
+	  HAL_SPI_Transmit(&hspi3, &data4, 1, 1000);
+	  if (HAL_SPI_Transmit(&hspi3, &dataToSend, 1, 1000) != HAL_OK) {
+	    // ここにエラーハンドリングのコードを書く
+	    Error_Handler();
+	  }
+	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
